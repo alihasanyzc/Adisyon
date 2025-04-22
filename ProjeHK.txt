@@ -1,0 +1,42 @@
+﻿Adisyon Projesi
+
+Gerekli Classlar
+
+Masa 
+Siparis
+Rapor
+SiparisService
+Product
+Urun
+
+
+Gerekli İnterfaceler
+
+SiparisHesaplama
+Product
+
+
+
+===== RESTORAN ADİSYON SİSTEMİ =====
+1. Masa Seç
+2. Sipariş Ekle
+3. Sipariş Görüntüle
+4. Sipariş Güncelle
+5. Sipariş Sil
+6. Hesap Kapat (Adisyonu Sonlandır)
+7. Gün Sonu Raporu
+0. Çıkış
+==================================== 
+Seçiminizi yapınız: 
+
+menü bu şekilde gözükecek
+
+
+Planlar:
+Masaları bir Array içerisinde tutmaya karar verdik çünkü statik veri kullanıyoruz.
+
+Masa seçmeden sipariş eklenemiyor,Görüntülenemiyor,Güncellenemiyor veya silinemiyor.
+
+
+Gün sonu raporu içerisinde ise o günün cirosu yazacak.
+
