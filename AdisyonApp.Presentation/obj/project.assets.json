@@ -1,26 +1,64 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "AdisyonApp.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "AdisyonApp.Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AdisyonApp.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AdisyonApp.Business.dll": {}
+        }
+      },
+      "AdisyonApp.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/AdisyonApp.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AdisyonApp.Entities.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "AdisyonApp.Business/1.0.0": {
+      "type": "project",
+      "path": "../AdisyonApp.Business/AdisyonApp.Business.csproj",
+      "msbuildProject": "../AdisyonApp.Business/AdisyonApp.Business.csproj"
+    },
+    "AdisyonApp.Entities/1.0.0": {
+      "type": "project",
+      "path": "../AdisyonApp.Entities/AdisyonApp.Entities.csproj",
+      "msbuildProject": "../AdisyonApp.Entities/AdisyonApp.Entities.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "AdisyonApp.Business >= 1.0.0",
+      "AdisyonApp.Entities >= 1.0.0"
+    ]
   },
   "packageFolders": {
-    "/Users/alihasan/.nuget/packages/": {}
+    "/home/toprakkilic/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/alihasan/Desktop/Adisyon/AdisyonApp.Presentation/AdisyonApp.Presentation.csproj",
+      "projectUniqueName": "/home/toprakkilic/Desktop/cs_Adisyon/AdisyonApp.Presentation/AdisyonApp.Presentation.csproj",
       "projectName": "AdisyonApp.Presentation",
-      "projectPath": "/Users/alihasan/Desktop/Adisyon/AdisyonApp.Presentation/AdisyonApp.Presentation.csproj",
-      "packagesPath": "/Users/alihasan/.nuget/packages/",
-      "outputPath": "/Users/alihasan/Desktop/Adisyon/AdisyonApp.Presentation/obj/",
+      "projectPath": "/home/toprakkilic/Desktop/cs_Adisyon/AdisyonApp.Presentation/AdisyonApp.Presentation.csproj",
+      "packagesPath": "/home/toprakkilic/.nuget/packages/",
+      "outputPath": "/home/toprakkilic/Desktop/cs_Adisyon/AdisyonApp.Presentation/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/alihasan/.nuget/NuGet/NuGet.Config"
+        "/home/toprakkilic/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -31,18 +69,20 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/toprakkilic/Desktop/cs_Adisyon/AdisyonApp.Business/AdisyonApp.Business.csproj": {
+              "projectPath": "/home/toprakkilic/Desktop/cs_Adisyon/AdisyonApp.Business/AdisyonApp.Business.csproj"
+            },
+            "/home/toprakkilic/Desktop/cs_Adisyon/AdisyonApp.Entities/AdisyonApp.Entities.csproj": {
+              "projectPath": "/home/toprakkilic/Desktop/cs_Adisyon/AdisyonApp.Entities/AdisyonApp.Entities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -64,7 +104,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.115/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
