@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/Users/alihasan/.nuget/packages/": {}
+    "/home/toprakkilic/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/alihasan/Desktop/Adisyon/AdisyonApp.Entities/AdisyonApp.Entities.csproj",
+      "projectUniqueName": "/home/toprakkilic/Desktop/cs_Adisyon/AdisyonApp.Entities/AdisyonApp.Entities.csproj",
       "projectName": "AdisyonApp.Entities",
-      "projectPath": "/Users/alihasan/Desktop/Adisyon/AdisyonApp.Entities/AdisyonApp.Entities.csproj",
-      "packagesPath": "/Users/alihasan/.nuget/packages/",
-      "outputPath": "/Users/alihasan/Desktop/Adisyon/AdisyonApp.Entities/obj/",
+      "projectPath": "/home/toprakkilic/Desktop/cs_Adisyon/AdisyonApp.Entities/AdisyonApp.Entities.csproj",
+      "packagesPath": "/home/toprakkilic/.nuget/packages/",
+      "outputPath": "/home/toprakkilic/Desktop/cs_Adisyon/AdisyonApp.Entities/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/alihasan/.nuget/NuGet/NuGet.Config"
+        "/home/toprakkilic/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -38,11 +38,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -64,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.115/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
