@@ -4,16 +4,12 @@ namespace AdisyonApp.Entities
     {
         // Properties
         public int Id { get; set; }
-        public string? TableName { get; set; }
-        public List<Order> Orders { get; set; }
-        public bool IsOccupied { get; set; } = false; // Set true when order is placed
+        public string TableName { get; set; }
+        public List<Order>? Orders { get; set; }
+        public bool IsOccupied { get; set; } = false; // Set true when order is plac
+        
 
-        // Constructor
-        public Table(int id, string? tableName)
-        {
-            Id = id;
-            TableName = tableName;
-            Orders = new List<Order>(); // Başlangıçta boş bir sipariş listesi
-        }
+        public double TableTotalPrice { get; set; }
+        
     }
 }
