@@ -7,39 +7,42 @@ namespace AdisyonApp.Presentation
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Adisyon Uygulaması Başlatıldı!");
+            var productManager = new ProductManager();
 
-            ProductManager ProductManager = new ProductManager();
+            // --- TÜM ÜRÜNLERİ LİSTELE ---
+            Console.WriteLine("--- Başlangıç Ürün Listesi ---");
+            ListProducts(productManager);
 
-            // Ürün oluşturma
-            Product product1 = new Product { Id = 1, Name = "Hamburger", Price = 150 };
-            Product product2 = new Product { Id = 2, Name = "Pizza", Price = 120 };
-            Product product3 = new Product { Id = 3, Name = "Kola", Price = 30 };
+            // --- YENİ ÜRÜN EKLE ---
+            var yeniUrun = new Product { Id = 4, Name = "Su", Price = 8 };
+            productManager.AddProduct(yeniUrun);
 
-            ProductManager.CreateProduct(product1);
-            ProductManager.CreateProduct(product2); 
-            ProductManager.CreateProduct(product3);
+            Console.WriteLine("\n--- Ürün Ekleme Sonrası Liste ---");
+            ListProducts(productManager);
 
-            // Tüm ürünleri listeleme
-            Console.WriteLine("\nTüm Ürünler:");
-            var allProducts = ProductManager.GetAllProducts();
-            foreach (var product in allProducts)
+            // --- ÜRÜN GÜNCELLE ---
+            productManager.UpdateProduct(2, "Türk Kahvesi", 25);
+
+            Console.WriteLine("\n--- Güncelleme Sonrası Liste ---");
+            ListProducts(productManager);
+
+            // --- ÜRÜN SİL ---
+            productManager.RemoveProduct(1); // ID'si 1 olan ürünü sil
+
+            Console.WriteLine("\n--- Silme Sonrası Liste ---");
+            ListProducts(productManager);
+
+            Console.WriteLine("\nTest tamamlandı. Çıkmak için bir tuşa basın...");
+            Console.ReadKey();
+        }
+
+        static void ListProducts(ProductManager manager)
+        {
+            var products = manager.GetAllProducts();
+            foreach (var p in products)
             {
-                Console.WriteLine($"Id: {product.Id}, Ad: {product.Name}, Fiyat: {product.Price}TL");
+                Console.WriteLine($"{p.Id}. {p.Name} - {p.Price} TL");
             }
-
-            // Ürün güncelleme
-            product1.Price = 170;
-            ProductManager.UpdateProduct(product1);
-
-            // ID'ye göre ürün getirme
-            Console.WriteLine("\nID:1 olan ürün:");
-            var selectedProduct = ProductManager.GetProductById(1);
-            Console.WriteLine($"Id: {selectedProduct.Id}, Ad: {selectedProduct.Name}, Fiyat: {selectedProduct.Price}TL");
-
-            // Ürün silme
-            ProductManager.DeleteProduct(3);
-            Console.WriteLine("\nKola ürünü silindi.");
         }
     }
 }

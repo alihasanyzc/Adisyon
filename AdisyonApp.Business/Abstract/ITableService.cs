@@ -5,14 +5,11 @@ namespace AdisyonApp.Business.Abstract
 {
     public interface ITableService
     {
-        void CreateTable(Table table);
-        void UpdateTable(Table table);
-        void DeleteTable(int tableId);
-        Table GetTableById(int tableId);
-        List<Table> GetAllTables();
-        void AddOrderToTable(int tableId, Order order, Menu menu);
-        void RemoveOrderFromTable(int tableId, int orderId, Menu menuId);
-        void ClearOrderFromTable(int tableId, int orderId);
-        double CalculateTableTotalPrice(int tableId);
+        void AddOrder(int tableId, Order order);
+        void RemoveOrder(int tableId, int orderIndex);
+        void UpdateOrder(int tableId, int orderIndex, int newQuantity);
+        List<Order> GetOrders(int tableId);
+        decimal GetTableTotal(int tableId);
+        Dictionary<int, decimal> GetEndOfDayReport();
     }
 }
