@@ -3,70 +3,49 @@ using AdisyonApp.Entities;
 
 namespace AdisyonApp.Business.Concrete
 {
-    public class ProductManager : IProductService
+   
+          
+        public class ProductManager : IProductService
+{
+    private readonly List<Product> _products;
+
+    public ProductManager()
     {
-        private readonly List<Product> _products;
-        
-        public ProductManager()
+        _products = new List<Product>
         {
-            _products = new List<Product>();
-        }
+            new Product { Id = 1, Name = "Çay", Price = 10 },
+            new Product { Id = 2, Name = "Kahve", Price = 20 },
+            new Product { Id = 3, Name = "Soda", Price = 12 }
+        };
+    }
 
-        public void CreateProduct(Product product)
-        {
-            _products.Add(product);
-        }
+       public List<Product> GetAllProducts()
+     {
+    return _products;
+    }
 
-        public void UpdateProduct(Product product)
-        {
-            var existingProduct = _products.Find(p => p.Id == product.Id);
-            if (existingProduct != null)
-            {
-                existingProduct.Name = product.Name;
-                existingProduct.Price = product.Price;
-            }
-            else
-            {
-                throw new Exception("Product not found");
-            }
-        }
+   public void AddProduct(Product product)
+{
+    _products.Add(product);
+}
 
-        public void DeleteProduct(int productId)
-        {
-            var existingProduct = _products.Find(p => p.Id == productId);
-            if (existingProduct != null)
-            {
-                _products.Remove(existingProduct);
-            }
-            else
-            {
-                throw new Exception("Güncellenemedi..");
-            }
-        }
 
-        public Product GetProductById(int productId)
+    public void UpdateProduct(int id, string newName, decimal newPrice)
+    {
+        var product = _products.Find(p => p.Id == id);
+        if (product != null)
         {
-            var existingProduct = _products.Find(p => p.Id == productId);
-            if (existingProduct != null)
-            {
-                return existingProduct;
-            }
-            throw new Exception("Product not found");
-        }
-
-        public List<Product> GetAllProducts()
-        {
-            if (_products.Count == 0)
-            {
-                throw new Exception("Product not found");
-            }
-            return _products;
-        }
-
-        public double CalculateTotalPrice(int productId)
-        {
-            var product = GetProductById(productId);
-            return (double)product.Price;
+            product.Name = newName;
+            product.Price = newPrice;
         }
     }
+
+    public void RemoveProduct(int id)
+    {
+        var product = _products.Find(p => p.Id == id);
+        if (product != null)
+            _products.Remove(product);
+    }
 }
+
+    }

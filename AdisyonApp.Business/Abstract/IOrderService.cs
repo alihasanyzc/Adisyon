@@ -11,5 +11,6 @@ namespace AdisyonApp.Business
         List<Order> GetAllOrders();
         List<Order> GetOrdersByTable(int tableId);
         decimal CalculateTotalAmount(int orderId);
+        decimal CalculateTableTotal(int tableId);
     }
 } 
